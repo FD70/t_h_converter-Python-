@@ -1,7 +1,7 @@
 import keyboard
 
 
-line_height = 2
+line_height = 3
 line_count = 4
 
 
