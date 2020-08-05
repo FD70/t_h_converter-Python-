@@ -1,5 +1,6 @@
 *pip install opencv-python*\
-*pip install numpy*
+*pip install numpy*\
+*pip install keyboard*
 
 Скрипт считывает изображение с вебкамеры и делает преобразования
 
