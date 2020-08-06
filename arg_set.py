@@ -1,7 +1,10 @@
 import keyboard
 
+import mp.VideoCap
 
-line_height = 3
+
+OUTPUT_FRAME = (800, 450)
+line_height = 4
 line_count = 4
 
 
@@ -38,3 +41,4 @@ def init():
     keyboard.add_hotkey('num_4', set_line_count_down)
     keyboard.add_hotkey('num_9', set_line_height_up)
     keyboard.add_hotkey('num_6', set_line_height_down)
+    keyboard.add_hotkey('num_1', mp.VideoCap.change_mode)

@@ -1,11 +1,14 @@
 import cv2
 import numpy
-import arg_set
 import collections
+
+import mp.VideoCap
+import arg_set
 
 
 def t_h_converter():
-    vin = cv2.VideoCapture(0)
+    # vin = cv2.VideoCapture(0)
+    vin = mp.VideoCap.VideoCap()
 
     success, frame = vin.read()
     vin_height, vin_width, channels = numpy.shape(frame)
@@ -14,7 +17,7 @@ def t_h_converter():
         recordframe = frame
         for x_index in range(0, vin_height-1, arg_set.line_height):
             s, next_frame = vin.read()
-            next_frame = cv2.flip(next_frame, 1)
+            # next_frame = cv2.flip(next_frame, 1)
 
             for i in range(arg_set.line_count):
                 rec = x_index + i * vin_height // arg_set.line_count
@@ -54,7 +57,9 @@ def get_next_frame(frame):
 
 
 def t_h_converter_type2():
-    vin = cv2.VideoCapture(0)
+    # vin = cv2.VideoCapture(0)
+    # vin = desktop
+    vin = mp.VideoCap.VideoCap()
     queue_reader(vin)
     success, frame = vin.read()
     while success:
@@ -65,8 +70,8 @@ def t_h_converter_type2():
             rec = x_index * arg_set.line_height
             recordframe[rec:rec + arg_set.line_height, :] = frame_queue[x_index][rec:rec + arg_set.line_height, :]
 
-        recordframe = cv2.flip(recordframe, 1)
-        normal_frame = cv2.flip(normal_frame, 1)
+        # recordframe = cv2.flip(recordframe, 1)
+        # normal_frame = cv2.flip(normal_frame, 1)
         cv2.imshow('converted', recordframe)
         cv2.imshow('normal', normal_frame)
         cv2.waitKey(1)
