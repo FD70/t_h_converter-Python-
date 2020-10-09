@@ -1,10 +1,5 @@
-import keyboard
-
-import mp.VideoCap
-
-
-OUTPUT_FRAME = (800, 450)
-line_height = 4
+line_resized = False
+line_height = 8
 line_count = 4
 
 
@@ -34,11 +29,3 @@ def set_line_height_down():
     if line_height > 1:
         line_height -= 1
     print(f'line height set to {line_height}')
-
-
-def init():
-    keyboard.add_hotkey('num_7', set_line_count_up)
-    keyboard.add_hotkey('num_4', set_line_count_down)
-    keyboard.add_hotkey('num_9', set_line_height_up)
-    keyboard.add_hotkey('num_6', set_line_height_down)
-    keyboard.add_hotkey('num_1', mp.VideoCap.change_mode)

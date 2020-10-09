@@ -2,7 +2,7 @@ from PIL import ImageGrab
 import cv2
 import numpy
 
-import arg_set
+import main_arg_set
 
 
 # 1280x720
@@ -12,7 +12,7 @@ import arg_set
 # 1920x1080
 
 # d_output_shape = (800, 450)
-d_output_shape = arg_set.OUTPUT_FRAME
+d_output_shape = main_arg_set.OUTPUT_FRAME
 d_cap_box = (0, 170, 900, 660)
 
 
